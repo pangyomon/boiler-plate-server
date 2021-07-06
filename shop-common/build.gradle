@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'com.shop'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+
+dependencies {
+
+}
+
+test {
+    useJUnitPlatform()
+}
