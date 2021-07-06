@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: none
+    driver-class-name: org.h2.Driver
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: update

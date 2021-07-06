@@ -1,4 +1,5 @@
 rootProject.name = 'shop-api'
 include 'shop-client-api'
 include 'shop-common'
+include 'shop-admin-api'
 
