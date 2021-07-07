@@ -1,0 +1,29 @@
+### Get banner list
+http://localhost:8081/api/v1/banner
+Content-Type: application/json
+
+### Save banner
+POST http://localhost:8081/api/v1/banner
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "title",
+  "imageUrl": "url",
+  "pageUrl": "pageurl",
+  "backgroundColor": "bgc",
+  "bannerStatus": "NOT_USE"
+}
+
+### Update banner
+PUT http://localhost:8081/api/v1/banner/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "title1",
+  "imageUrl": "url1",
+  "pageUrl": "pageurl1",
+  "backgroundColor": "bgc1",
+  "bannerStatus": "NOT_USE"
+}
