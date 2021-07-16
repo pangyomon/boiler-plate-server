@@ -19,7 +19,7 @@ public class BannerAdminService {
     @Transactional(readOnly = true)
     public BannerAdminResponseDto findById(Long id) {
         Banner findBanner =  bannerRepository.findById(id)
-                .orElseThrow(() -> new IllegalStateException(id + "인 배너는 존재하지 않습니다"));
+                .orElseThrow(() -> new IllegalArgumentException(id + "인 배너는 존재하지 않습니다"));
 
         return new BannerAdminResponseDto(findBanner);
     }
@@ -39,7 +39,7 @@ public class BannerAdminService {
     @Transactional
     public Long update(Long id, BannerUpdateRequestDto requestDto) {
         Banner findBanner =  bannerRepository.findById(id)
-                .orElseThrow(() -> new IllegalStateException(id + "인 배너는 존재하지 않습니다"));
+                .orElseThrow(() -> new IllegalArgumentException(id + "인 배너는 존재하지 않습니다"));
 
         findBanner.changeTitle(requestDto.getTitle());
         findBanner.changeImageUrl(requestDto.getImageUrl());
@@ -53,7 +53,7 @@ public class BannerAdminService {
     @Transactional
     public void delete(Long id) {
         Banner findBanner =  bannerRepository.findById(id)
-                .orElseThrow(() -> new IllegalStateException(id + "인 배너는 존재하지 않습니다"));
+                .orElseThrow(() -> new IllegalArgumentException(id + "인 배너는 존재하지 않습니다"));
 
         bannerRepository.delete(findBanner);
     }

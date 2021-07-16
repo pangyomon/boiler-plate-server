@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.shop.banner.utils.GenerateBannerUtil.generateSaveRequestDto;
+import static com.shop.utils.BannerAdminUtil.generateBannerSaveRequestDto;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -31,7 +31,7 @@ class BannerAdminServiceTest {
     @Test
     public void saveTest() {
         //given
-        BannerSaveRequestDto requestDto = generateSaveRequestDto();
+        BannerSaveRequestDto requestDto = generateBannerSaveRequestDto();
 
         // when
         Long savedBannerId = bannerAdminService.save(requestDto);
@@ -49,7 +49,7 @@ class BannerAdminServiceTest {
     @Test
     public void updateTest() {
         // given
-        BannerSaveRequestDto requestDto = generateSaveRequestDto();
+        BannerSaveRequestDto requestDto = generateBannerSaveRequestDto();
         Long savedBannerId = bannerAdminService.save(requestDto);
 
         String changeTitle = "changedTitle";
@@ -83,7 +83,7 @@ class BannerAdminServiceTest {
     @Test
     public void deleteTest() {
         // given
-        BannerSaveRequestDto requestDto = generateSaveRequestDto();
+        BannerSaveRequestDto requestDto = generateBannerSaveRequestDto();
         Long savedBannerId = bannerAdminService.save(requestDto);
 
         // when
@@ -97,7 +97,7 @@ class BannerAdminServiceTest {
     @Test
     public void findIdExceptionTest() {
         // when
-        Long savedBannerId = bannerAdminService.save(generateSaveRequestDto());
+        Long savedBannerId = bannerAdminService.save(generateBannerSaveRequestDto());
 
         // then
         // ID로 조회되지 않아서 Exception 이 발생해야 합니다

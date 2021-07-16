@@ -13,8 +13,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.shop.banner.utils.GenerateBannerUtil.generateSaveRequestDto;
-import static com.shop.banner.utils.GenerateBannerUtil.generateUpdateRequestDto;
+import static com.shop.utils.BannerAdminUtil.generateBannerSaveRequestDto;
+import static com.shop.utils.BannerAdminUtil.generateUpdateRequestDto;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,7 +42,7 @@ class BannerAdminControllerTest {
     @Test
     public void saveTest() throws Exception {
         // given
-        BannerSaveRequestDto requestDto = generateSaveRequestDto();
+        BannerSaveRequestDto requestDto = generateBannerSaveRequestDto();
 
         // when
         String savedBannerIdStr = mockMvc.perform(post("/api/v1/banner")
@@ -66,7 +66,7 @@ class BannerAdminControllerTest {
     @Test
     public void updateTest() throws Exception {
         // given
-        BannerSaveRequestDto saveRequestDto = generateSaveRequestDto();
+        BannerSaveRequestDto saveRequestDto = generateBannerSaveRequestDto();
         BannerUpdateRequestDto updateRequestDto = generateUpdateRequestDto();
 
         // when

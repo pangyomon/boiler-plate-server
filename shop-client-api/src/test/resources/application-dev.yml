@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: boilerplate.shop
+    url:  jdbc:mariadb://boilerplate.site:3306/shop
     driver-class-name: org.mariadb.jdbc.Driver
-    username: sa
+    username: shop01
+    password: shop0!
   jpa:
     hibernate:
       ddl-auto: update

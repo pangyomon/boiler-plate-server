@@ -1,6 +1,6 @@
 package com.shop.banner;
 
-import com.shop.banner.dto.BannerClientResponse;
+import com.shop.banner.dto.BannerClientResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +13,9 @@ public class BannerClientService {
 
     private final BannerRepository bannerRepository;
 
-    public List<BannerClientResponse> findUseBannerList() {
+    public List<BannerClientResponseDto> findUseBannerList() {
         return bannerRepository.findBannerByBannerStatus(BannerStatus.USE).stream()
-                .map((banner) -> BannerClientResponse.builder()
+                .map((banner) -> BannerClientResponseDto.builder()
                         .imageUrl(banner.getImageUrl())
                         .pageUrl(banner.getPageUrl())
                         .backgroundColor(banner.getBackgroundColor())

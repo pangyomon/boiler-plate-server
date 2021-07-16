@@ -1,14 +1,14 @@
-package com.shop.banner.utils;
+package com.shop.utils;
 
 import com.github.javafaker.Faker;
 import com.shop.banner.BannerStatus;
 import com.shop.banner.dto.BannerSaveRequestDto;
 import com.shop.banner.dto.BannerUpdateRequestDto;
-import net.bytebuddy.utility.RandomString;
 
-public class GenerateBannerUtil {
+public class BannerAdminUtil {
 
-    public static BannerSaveRequestDto generateSaveRequestDto() {
+    public static BannerSaveRequestDto generateBannerSaveRequestDto() {
+
         Faker faker = new Faker();
 
         // given
